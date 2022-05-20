@@ -45,7 +45,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set Issues
-        uses: ./
+        uses: zlus/action-extract-issues@0.0.1
         id: set_issues
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
