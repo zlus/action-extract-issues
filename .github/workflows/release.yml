@@ -1,0 +1,28 @@
+
+name: Set Issues
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  SetIssues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set Issues
+        uses: ./
+        id: set_issues
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          add-labels: enhancement
+          remove-labels: bug
+          add-comment: |
+            already fixed.
+
+      - name: Log
+        run: echo ${{ steps.set_issues.outputs.issues }}

@@ -1,0 +1,22 @@
+name: "Extract Issues"
+description: "Extract issues from push commit messages and can have basic operations like: add labels, remove labels, and add comment"
+inputs:
+  match-reg:
+    description: Regular extraction
+    default: 'fix +#(\d+)'
+    required: true
+  add-labels:
+    description: Add labels on issue
+  remove-labels:
+    description: Remove labels on issue
+  add-comment:
+    description: Add comment on issue
+  fail-on-error:
+    description: Whether the action fails when an error occurs in the operations.
+    default: 'false'
+outputs:
+  issues:
+    description: "The extracted issues numbers"
+runs:
+  using: "node16"
+  main: "lib/index.js"
