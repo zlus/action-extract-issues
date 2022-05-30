@@ -10,12 +10,16 @@ It would be more useful to use this with other GitHub Actions' outputs.
       description: Regular extraction
       default: 'fix +#(\d+)'
       required: true
+
     add-labels:
       description: Add labels on issue
+
     remove-labels:
       description: Remove labels on issue
+
     add-comment:
       description: Add comment on issue
+
     fail-on-error:
       description: Whether the action fails when an error occurs in the operations.
       default: 'false'
@@ -27,7 +31,7 @@ It would be more useful to use this with other GitHub Actions' outputs.
 
 ## Example
 
-### Remove a single label with a comment
+### Extract Issues And Operate it
 
 ```yaml
 name: Set Issues
@@ -45,7 +49,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set Issues
-        uses: zlus/action-extract-issues@0.0.1
+        uses: zlus/action-extract-issues@1.0.0
         id: set_issues
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
