@@ -4,7 +4,6 @@ inputs:
   match-reg:
     description: Regular extraction
     default: 'fix +#(\d+)'
-    required: true
   add-labels:
     description: Add labels on issue
   remove-labels:

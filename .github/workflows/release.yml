@@ -19,10 +19,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          add-labels: enhancement
-          remove-labels: bug
-          add-comment: |
-            already fixed.
+          match-reg: 'test +#(\d+)' # optional
+          add-labels: enhancement   # optional
+          remove-labels: bug        # optional
+          add-comment: |            # optional
+            already fixed. 
 
       - name: Log
         run: echo ${{ steps.set_issues.outputs.issues }}
