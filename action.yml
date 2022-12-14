@@ -3,7 +3,7 @@ description: "Extract issues from push commit messages and can have basic operat
 inputs:
   match-reg:
     description: Regular extraction
-    default: 'fix +#(\d+)'
+    default: 'fix:? ?#(\d+)'
   add-labels:
     description: Add labels on issue
   remove-labels:

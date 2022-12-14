@@ -50,7 +50,7 @@ jobs:
 
     match-reg:
       description: Regular extraction
-      default: 'fix +#(\d+)'
+      default: 'fix:? ?#(\d+)'
 
     add-labels:
       description: Add labels on issue
